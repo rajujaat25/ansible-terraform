@@ -9,7 +9,7 @@ tags = {
  connection {
     type        = "ssh"
     user        = "ubuntu" 
-    private_key = file("${path.module}/rs.pem")
+    private_key = file("${path.module}/rsa_id.pem")
      host        = self.public_ip
   }
 
