@@ -19,7 +19,7 @@ provisioner "remote-exec" {
       "sudo echo 'ubuntu:ansible@123' | sudo chpasswd",
       "sudo apt-get install -y ansible",
       "sudo apt install sshpass -y",
-      "sudo chmod 755 /etc/ansible/hosts",
+      "sudo chmod 777 /etc/ansible/hosts",
       "sudo echo 'webserver1 ansible_host=${aws_instance.ansible-worker-instance.public_ip} ansible_ssh_pass=worker@123  ansible_user=ubuntu' >> /etc/ansible/hosts",
       "sudo sed -i '/^#host_key_checking/s/^#//' /etc/ansible/ansible.cfg",
       "sudo sed -i 's/PasswordAuthentication no/PasswordAuthentication yes/g' /etc/ssh/sshd_config",
