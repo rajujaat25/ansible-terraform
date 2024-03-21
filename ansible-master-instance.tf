@@ -1,7 +1,7 @@
 resource "aws_instance" "ansible-master-instance" {
   ami = "ami-07b36ea9852e986ad"
   instance_type = "t2.micro"
-  key_name = aws_key_pair.ansible-key.key_name
+  key_name = "ansible-terraform"
   vpc_security_group_ids = ["${aws_security_group.ansible_security_group.id}"]
 tags = {
    Name = "ansible-master-instance"
