@@ -9,7 +9,7 @@ tags = {
  connection {
     type        = "ssh"
     user        = "ubuntu" 
-    private_key = file("${path.module}/rsa_id.pem")
+    private_key = file("${path.module}/home/ansible-terraform.pem")
      host        = self.public_ip
   }
 
