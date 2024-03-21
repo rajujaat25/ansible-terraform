@@ -1,0 +1,35 @@
+---
+- name: Setup Web Server
+  hosts: all
+  become: true
+  tasks:
+    - name: Ensure latest versions of required packages are installed
+      apt:
+        name: "{{ item }}"
+        state: latest
+      loop:
+        - nginx
+  
+    - name: Enable and start nginx service
+      service:
+        name: nginx
+        state: started
+        enabled: true
+
+    - name: Allow HTTP traffic through firewall
+      firewalld:
+        service: http
+        state: enabled
+        immediate: true
+
+    - name: Copy web files
+      copy:
+        src: web/
+        dest: /var/www/html/
+      notify: Restart Nginx
+
+  handlers:
+    - name: Restart Nginx
+      service:
+        name: nginx
+        state: restarted
