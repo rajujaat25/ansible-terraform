@@ -96,7 +96,7 @@ pipeline {
 pipeline {
     agent any;
     stages {
-        stage('Create Playbook Directory') {
+        stage('Ansible-Playbook') {
             steps {
                 sshagent(['ansible_keys']) {
                     sh 'ssh ubuntu@18.116.23.53 "mkdir -p playbook"'
