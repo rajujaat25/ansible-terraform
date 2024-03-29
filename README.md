@@ -108,4 +108,4 @@ pipeline {
     }        
 }
 ```
-
+- This project provides a comprehensive guide for setting up Jenkins, Ansible, and Terraform on an Ubuntu EC2 instance and creating pipelines to manage infrastructure and execute Ansible playbooks
