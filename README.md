@@ -85,7 +85,8 @@ pipeline {
     }
 }
 ```
-**Configure SSH Server Credentials in Jenkins**
+# Configure SSH Server Credentials in Jenkins
+
 **1.Go to Manage Jenkins:**
 
 - Click on "Manage Jenkins" from the left-hand sidebar. 
