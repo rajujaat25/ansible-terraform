@@ -86,7 +86,34 @@ pipeline {
 }
 ```
 **Configure SSH Server Credentials in Jenkins**
-- Create Credentials: In Jenkins, go to Credentials, click on Add Credentials, and choose SSH Username with private key configuration. You can either use a username or private key.
+**1.Go to Manage Jenkins:**
+
+- Click on "Manage Jenkins" from the left-hand sidebar. 
+
+**2.Credentials:**
+- In the Manage Jenkins page, locate and click on "Credentials" from the available options.
+
+**3.Add Credentials:**
+
+- Click on the "Global credentials (unrestricted)" or "System" domain depending on your setup.
+- Click on the "Add Credentials" link.
+
+**4.Choose Credential Type:**
+
+- In the "Kind" dropdown menu, select "SSH Username with private key".
+
+**5.Enter Credentials:**
+- Enter the SSH Username associated with the remote server (ansible-master-instance).
+- Provide the Private Key associated with the SSH user. You can either enter the key directly or use the "Enter directly" option or select "From a file on Jenkins master" if the key is stored on the Jenkins server.
+
+**6.Set an ID and Description:**
+
+- Optionally, set an ID and Description to identify the credential.
+- Ex-(ansible_keys)
+
+**7.Save Credentials:**
+
+- Click "OK" or "Save" to save the SSH Server Credentials in Jenkins.
 
 # Create Jenkins Pipeline for Ansible-Playbook Run
 - Create a new pipeline job in Jenkins to define your Ansible-playbook pipeline. Use the provided example pipeline code and customize it according to your requirements.
