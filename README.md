@@ -127,9 +127,9 @@ pipeline {
         stage('Ansible-Playbook') {
             steps {
                 sshagent(['ansible_keys']) {
-                    sh 'ssh ubuntu@18.116.23.53 "mkdir -p playbook"'
-                    sh 'ssh ubuntu@18.116.23.53 "git clone https://github.com/rajujaat25/ansible-nginx.git /home/ubuntu/playbook"'
-                    sh 'ssh ubuntu@18.116.23.53 "ansible-playbook /home/ubuntu/playbook/deploymnet_nginx.yml"'
+                    sh 'ssh -o StrictHostKeyChecking=no ubuntu@18.116.23.53 "mkdir -p playbook"'
+                    sh 'ssh -o StrictHostKeyChecking=no ubuntu@18.116.23.53 "git clone https://github.com/rajujaat25/ansible-nginx.git /home/ubuntu/playbook"'
+                    sh 'ssh -o StrictHostKeyChecking=no ubuntu@18.116.23.53 "ansible-playbook /home/ubuntu/playbook/deploymnet_nginx.yml"'
                 }
             }
         }
