@@ -18,8 +18,6 @@ provisioner "remote-exec" {
       "sudo apt-get update",
       "sudo echo 'ubuntu:worker@123' | sudo chpasswd",
       "sudo sed -i 's/PasswordAuthentication no/PasswordAuthentication yes/g' /etc/ssh/sshd_config",
-      "sudo sed -i '/^#PermitRootLogin/s/^#//' /etc/ssh/sshd_config",
-      "sudo sed -i 's/PermitRootLogin prohibit-password/PermitRootLogin yes/g' /etc/ssh/sshd_config",
       "sudo service ssh reload",
       ]
   }
