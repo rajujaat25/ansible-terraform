@@ -23,8 +23,6 @@ provisioner "remote-exec" {
       "sudo echo 'webserver1 ansible_host=${aws_instance.ansible-worker-instance.public_ip} ansible_ssh_pass=worker@123  ansible_user=ubuntu' >> /etc/ansible/hosts",
       "sudo sed -i '/^#host_key_checking/s/^#//' /etc/ansible/ansible.cfg",
       "sudo sed -i 's/PasswordAuthentication no/PasswordAuthentication yes/g' /etc/ssh/sshd_config",
-      "sudo sed -i '/^#PermitRootLogin/s/^#//' /etc/ssh/sshd_config",
-      "sudo sed -i 's/PermitRootLogin prohibit-password/PermitRootLogin yes/g' /etc/ssh/sshd_config",
       "sudo service ssh reload"
     ]
   }
